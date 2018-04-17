@@ -1,0 +1,30 @@
+{
+  "name": "vue-form-generator-element",
+  "version": "0.0.1",
+  "description": "Element (http://element.eleme.io) fields for vue-form-generator",
+  "main": "src/Component.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Egor Zotov https://github.com/egorzot",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "vue",
+    "vuejs",
+    "form",
+    "generator",
+    "schema",
+    "json",
+    "Element"
+  ],
+  "dependencies": {
+    "vue-form-generator": "2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egorzot/vue-form-generator-element.git"
+  }
+}
