@@ -1,0 +1,42 @@
+{
+    "env": {
+        "browser": true
+    },
+    "plugins": [
+        "extra-rules"
+    ],
+    "extends": [
+        "plugin:vue/recommended"
+    ],
+    "rules": {
+        "indent": [
+            "warn",
+            4
+        ],
+        "linebreak-style": [
+            "warn",
+            "unix"
+        ],
+        "quotes": [
+            "warn",
+            "double"
+        ],
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "eqeqeq": [
+            "warn",
+            "smart"
+        ],
+        "no-console": "warn",
+        "object-shorthand": "warn",
+        "no-unused-vars": 1,
+        "vue/html-indent": [
+            "warn",
+            4
+        ],
+        "vue/no-v-html": "ignore",
+        "vue/no-template-shadow" : "ignore"
+    }
+}

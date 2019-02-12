@@ -26,5 +26,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/egorzot/vue-form-generator-element.git"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-plugin-extra-rules": "^0.0.0-development",
+    "eslint-plugin-vue": "^5.1.0"
   }
 }
