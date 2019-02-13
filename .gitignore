@@ -1,0 +1,5 @@
+# User-specific stuff
+.idea
+.vscode
+node_modules
+yarn-error.log
