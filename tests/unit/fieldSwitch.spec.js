@@ -20,18 +20,22 @@ describe("fieldElementSwitch", () => {
           inputName: "custom_element_name",
           id: "custom_element_id",
           elementLabel: "Switch label example",
-          activeValue: "foo",
-          inactiveValue: "bar",
-          activeColor: "#fff",
-          inactiveColor: "#ooo",
-          activeText: "On",
-          inactiveText: "Off",
-          width: 50
+          valueOn: "foo",
+          valueOff: "bar",
+          colorOn: "#fff",
+          colorOff: "#ooo",
+          textOn: "On",
+          textOff: "Off",
+          width: 50,
+          default: "foo"
         }
       }
     });
 
     const elSwitch = wrapper.find(Switch);
+    const fieldSwitch1 = wrapper.find(fieldSwitch);
+
+    console.log(fieldSwitch1.props());
 
     expect(elSwitch.props("disabled")).toBeTruthy();
     expect(elSwitch.props("name")).toEqual("custom_element_name");

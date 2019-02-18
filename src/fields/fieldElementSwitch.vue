@@ -1,16 +1,17 @@
 <template>
   <el-form-item :label="schema.elementLabel ? schema.elementLabel : ''">
     <el-switch
-      v-model="value"
+      @input="change"
+      :value="value"
       :disabled="schema.disabled"
       :name="schema.inputName"
       :id="schema.id"
-      :active-value="schema.activeValue"
-      :inactive-value="schema.inactiveValue"
-      :active-color="schema.activeColor"
-      :inactive-color="schema.inactiveColor"
-      :active-text="schema.activeText"
-      :inactive-text="schema.inactiveText"
+      :active-value="schema.valueOn"
+      :inactive-value="schema.valueOff"
+      :active-color="schema.colorOn"
+      :inactive-color="schema.colorOff"
+      :active-text="schema.textOn"
+      :inactive-text="schema.textOff"
       :width="schema.width ? schema.width : 40"
     />
   </el-form-item>
@@ -18,21 +19,17 @@
 
 <script>
 import { abstractField } from "vue-form-generator";
+import defaultValueSetter from "../mixins/defaultValueSetter";
 
 export default {
-  mixins: [abstractField],
+  mixins: [abstractField, defaultValueSetter],
   methods: {
-    formatValueToField(value) {
-      if (value != null && this.schema.valueOn)
-        return value == this.schema.valueOn;
-      return value;
-    },
-    formatValueToModel(value) {
-      if (value != null && this.schema.valueOn) {
-        if (value) return this.schema.valueOn;
-        return this.schema.valueOff;
+    change: function(v) {
+      //by default Element Switch element sets inactive value because of our default value has not been resolved yet
+      if (typeof this.value === "undefined") {
+        return;
       }
-      return value;
+      this.value = v;
     }
   }
 };

@@ -81,6 +81,7 @@
 <script>
 import { abstractField } from "vue-form-generator";
 import { isNumber, debounce, isFunction } from "lodash";
+import defaultValueSetter from "../mixins/defaultValueSetter";
 
 const DEBOUNCE_FORMAT_MS = 1000;
 
@@ -97,7 +98,7 @@ export default {
       "search"
     ]
   }),
-  mixins: [abstractField],
+  mixins: [abstractField, defaultValueSetter],
   mounted() {
     switch (this.schema.inputType.toLowerCase()) {
       case "number":
