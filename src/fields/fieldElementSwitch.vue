@@ -1,13 +1,19 @@
 <template>
-  <el-switch
-    v-model="value"
-    :active-color="schema.activeColor"
-    :inactive-color="schema.inactiveColor"
-    :active-text="schema.textOn"
-    :inactive-text="schema.textOff"
-    :disabled="disabled"
-    :name="schema.inputName"
-  />
+  <el-form-item :label="schema.elementLabel ? schema.elementLabel : ''">
+    <el-switch
+      v-model="value"
+      :disabled="schema.disabled"
+      :name="schema.inputName"
+      :id="schema.id"
+      :active-value="schema.activeValue"
+      :inactive-value="schema.inactiveValue"
+      :active-color="schema.activeColor"
+      :inactive-color="schema.inactiveColor"
+      :active-text="schema.activeText"
+      :inactive-text="schema.inactiveText"
+      :width="schema.width ? schema.width : 40"
+    />
+  </el-form-item>
 </template>
 
 <script>

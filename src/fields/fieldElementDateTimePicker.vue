@@ -15,6 +15,7 @@
 import { abstractField } from "vue-form-generator";
 
 export default {
+  name: "fieldElementDateTimePicker",
   mixins: [abstractField],
   methods: {}
 };

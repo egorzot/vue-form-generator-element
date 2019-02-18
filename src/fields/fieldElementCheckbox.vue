@@ -12,6 +12,7 @@
 import { abstractField } from "vue-form-generator";
 
 export default {
+  name: "fieldElementCheckbox",
   mixins: [abstractField]
 };
 </script>

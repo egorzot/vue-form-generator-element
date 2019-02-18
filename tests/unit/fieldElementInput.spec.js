@@ -1,13 +1,13 @@
 import { mount, createLocalVue } from "@vue/test-utils";
-import ElementUI, { Form } from "element-ui";
-import Component from "../../src/fields/fieldElementInput.vue";
+import ElementUI, { Form, Input } from "element-ui";
+import ElementInput from "@/fields/fieldElementInput.vue";
 
 const localVue = createLocalVue();
 localVue.use(ElementUI);
 
 describe("fieldElementInput", () => {
   test("Common props.", () => {
-    const wrapper = mount(Component, {
+    const wrapper = mount(ElementInput, {
       localVue,
       parentComponent: Form,
       provide: {
@@ -24,27 +24,40 @@ describe("fieldElementInput", () => {
           elementLabel: "Input label example",
           alt: "Input alt",
           readonly: true,
+          clearable: true
         }
       }
     });
 
-    const html = wrapper.html();
-    // console.log(html)
-    expect(html.includes('placeholder="Input number example"')).toBeTruthy();
-    expect(html.includes('name="custom_element_name"')).toBeTruthy();
-    expect(html.includes('id="custom_element_id"')).toBeTruthy();
-    expect(html.includes('required="required"')).toBeTruthy();
-    expect(html.includes('disabled="disabled"')).toBeTruthy();
-    expect(html.includes('alt="Input alt"')).toBeTruthy();
-    expect(html.includes('readonly="readonly"')).toBeTruthy();
+    const elInput = wrapper.find(Input);
+
+    expect(elInput.props("disabled")).toBeTruthy();
+    expect(elInput.props("readonly")).toBeTruthy();
+    expect(elInput.props("clearable")).toBeTruthy();
+    expect(elInput.props("type")).toEqual("number");
+
+    const inputHtml = wrapper.find("input").html();
+
     expect(
-      html.includes(
+      inputHtml.includes('placeholder="Input number example"')
+    ).toBeTruthy();
+    expect(inputHtml.includes('name="custom_element_name"')).toBeTruthy();
+    expect(inputHtml.includes('id="custom_element_id"')).toBeTruthy();
+    expect(inputHtml.includes('required="required"')).toBeTruthy();
+    expect(inputHtml.includes('disabled="disabled"')).toBeTruthy();
+    expect(inputHtml.includes('alt="Input alt"')).toBeTruthy();
+    expect(inputHtml.includes('readonly="readonly"')).toBeTruthy();
+
+    const labelHtml = wrapper.find("label").html();
+
+    expect(
+      labelHtml.includes(
         '<label class="el-form-item__label">Input label example</label>'
       )
     ).toBeTruthy();
   });
-  test("Number type.", () => {
-    const wrapper = mount(Component, {
+  test("Text type.", () => {
+    const wrapper = mount(ElementInput, {
       localVue,
       parentComponent: Form,
       provide: {
@@ -58,14 +71,15 @@ describe("fieldElementInput", () => {
         }
       }
     });
-    expect(wrapper.vm.schema.inputType).toBe("text");
-    const html = wrapper.html();
-    expect(html.includes('<input type="text"')).toBeTruthy();
-    expect(html.includes('minlength="10"')).toBeTruthy();
-    expect(html.includes('maxlength="20"')).toBeTruthy();
+    expect(wrapper.find(ElementInput).props("schema").inputType).toBe("text");
+
+    const inputHtml = wrapper.find("input").html();
+    expect(inputHtml.includes('<input type="text"')).toBeTruthy();
+    expect(inputHtml.includes('minlength="10"')).toBeTruthy();
+    expect(inputHtml.includes('maxlength="20"')).toBeTruthy();
   });
-  test("Text type.", () => {
-    const wrapper = mount(Component, {
+  test("Number type.", () => {
+    const wrapper = mount(ElementInput, {
       localVue,
       parentComponent: Form,
       provide: {
@@ -80,11 +94,12 @@ describe("fieldElementInput", () => {
         }
       }
     });
-    expect(wrapper.vm.schema.inputType).toBe("number");
-    const html = wrapper.html();
-    expect(html.includes('<input type="number"')).toBeTruthy();
-    expect(html.includes('step="0.1"')).toBeTruthy();
-    expect(html.includes('min="0"')).toBeTruthy();
-    expect(html.includes('max="10"')).toBeTruthy();
+    expect(wrapper.find(ElementInput).props("schema").inputType).toBe("number");
+
+    const inputHtml = wrapper.find("input").html();
+    expect(inputHtml.includes('<input type="number"')).toBeTruthy();
+    expect(inputHtml.includes('step="0.1"')).toBeTruthy();
+    expect(inputHtml.includes('min="0"')).toBeTruthy();
+    expect(inputHtml.includes('max="10"')).toBeTruthy();
   });
 });
