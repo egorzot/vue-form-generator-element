@@ -1,6 +1,6 @@
 <template>
   <el-form-item
-    v-if="inputTypeSupported()"
+    v-if="inputTypeSupported"
     :label="schema.elementLabel ? schema.elementLabel : ''"
   >
     <el-input
@@ -100,26 +100,14 @@ export default {
   }),
   mixins: [abstractField, defaultValueSetter],
   mounted() {
-    switch (this.schema.inputType.toLowerCase()) {
-      case "number":
-        this.debouncedFormatFunc = debounce(
-          (newValue, oldValue) => {
-            this.formatNumberToModel(newValue, oldValue);
-          },
-          DEBOUNCE_FORMAT_MS,
-          {
-            trailing: true,
-            leading: false
-          }
-        );
-        break;
-      default:
-        break;
-    }
+    this.setDebounceFunc();
   },
   methods: {
     formatValueToModel(value) {
       if (value != null) {
+        if (!isFunction(this.debouncedFormatFunc)) {
+          this.setDebounceFunc();
+        }
         switch (this.schema.inputType.toLowerCase()) {
           case "number":
             // debounce
@@ -144,6 +132,27 @@ export default {
         this.debouncedFormatFunc.flush();
       }
     },
+    setDebounceFunc() {
+      if (isFunction(this.debouncedFormatFunc)) return;
+      switch (this.schema.inputType.toLowerCase()) {
+        case "number":
+          this.debouncedFormatFunc = debounce(
+            (newValue, oldValue) => {
+              this.formatNumberToModel(newValue, oldValue);
+            },
+            DEBOUNCE_FORMAT_MS,
+            {
+              trailing: true,
+              leading: false
+            }
+          );
+          break;
+        default:
+          break;
+      }
+    }
+  },
+  computed: {
     inputTypeSupported() {
       return (
         this.schema.inputType.toLowerCase() === "" ||
