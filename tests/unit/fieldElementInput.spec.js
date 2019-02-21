@@ -1,13 +1,13 @@
 import { mount, createLocalVue } from "@vue/test-utils";
 import ElementUI, { Form, Input } from "element-ui";
-import ElementInput from "@/fields/fieldElementInput.vue";
+import fieldInput from "@/fields/fieldElementInput.vue";
 
 const localVue = createLocalVue();
 localVue.use(ElementUI);
 
 describe("fieldElementInput", () => {
   test("Common props.", () => {
-    const wrapper = mount(ElementInput, {
+    const wrapper = mount(fieldInput, {
       localVue,
       parentComponent: Form,
       provide: {
@@ -57,7 +57,7 @@ describe("fieldElementInput", () => {
     ).toBeTruthy();
   });
   test("Text type.", () => {
-    const wrapper = mount(ElementInput, {
+    const wrapper = mount(fieldInput, {
       localVue,
       parentComponent: Form,
       provide: {
@@ -71,7 +71,7 @@ describe("fieldElementInput", () => {
         }
       }
     });
-    expect(wrapper.find(ElementInput).props("schema").inputType).toBe("text");
+    expect(wrapper.find(fieldInput).props("schema").inputType).toBe("text");
 
     const inputHtml = wrapper.find("input").html();
     expect(inputHtml.includes('<input type="text"')).toBeTruthy();
@@ -79,7 +79,7 @@ describe("fieldElementInput", () => {
     expect(inputHtml.includes('maxlength="20"')).toBeTruthy();
   });
   test("Number type.", () => {
-    const wrapper = mount(ElementInput, {
+    const wrapper = mount(fieldInput, {
       localVue,
       parentComponent: Form,
       provide: {
@@ -94,7 +94,7 @@ describe("fieldElementInput", () => {
         }
       }
     });
-    expect(wrapper.find(ElementInput).props("schema").inputType).toBe("number");
+    expect(wrapper.find(fieldInput).props("schema").inputType).toBe("number");
 
     const inputHtml = wrapper.find("input").html();
     expect(inputHtml.includes('<input type="number"')).toBeTruthy();

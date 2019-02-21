@@ -6,7 +6,7 @@ const localVue = createLocalVue();
 localVue.use(ElementUI);
 
 describe("fieldElementSwitch", () => {
-  test("Common props.", () => {
+  test("Switch props.", () => {
     const wrapper = mount(fieldSwitch, {
       localVue,
       parentComponent: Form,
