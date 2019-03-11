@@ -4,11 +4,10 @@ import fieldElementInput from "../src/fields/fieldElementInput.vue";
 import fieldElementSelect from "../src/fields/fieldElementSelect.vue";
 import fieldElementTextArea from "../src/fields/fieldElementTextArea.vue";
 import fieldElementUpload from "../src/fields/fieldElementUpload.vue";
-import fieldElementDateTimePicker from "../src/fields/fieldElementDateTimePicker.vue";
+import fieldElementDatePicker from "../src/fields/fieldElementDatePicker.vue";
 import fieldElementSwitch from "../src/fields/fieldElementSwitch.vue";
 import fieldElementColorPicker from "../src/fields/fieldElementColorPicker.vue";
 import fieldElementSlider from "../src/fields/fieldElementSlider.vue";
-
 
 export default {
   install(Vue) {
@@ -18,7 +17,7 @@ export default {
     Vue.component("fieldElementSelect", fieldElementSelect);
     Vue.component("fieldElementTextArea", fieldElementTextArea);
     Vue.component("fieldElementUpload", fieldElementUpload);
-    Vue.component("fieldElementDateTimePicker", fieldElementDateTimePicker);
+    Vue.component("fieldElementDatePicker", fieldElementDatePicker);
     Vue.component("fieldElementSwitch", fieldElementSwitch);
     Vue.component("fieldElementColorPicker", fieldElementColorPicker);
     Vue.component("fieldElementSlider", fieldElementSlider);
