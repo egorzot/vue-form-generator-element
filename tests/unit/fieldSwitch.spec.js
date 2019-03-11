@@ -33,8 +33,6 @@ describe("fieldElementSwitch", () => {
     });
 
     const elSwitch = wrapper.find(Switch);
-    // const fieldSwitch1 = wrapper.find(fieldSwitch);
-    // console.log(fieldSwitch1.props());
 
     expect(elSwitch.props("disabled")).toBeTruthy();
     expect(elSwitch.props("name")).toEqual("custom_element_name");

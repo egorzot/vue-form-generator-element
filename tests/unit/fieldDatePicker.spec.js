@@ -46,7 +46,6 @@ describe("fieldElementDatePicker", () => {
       "DateTime picker example"
     );
     expect(elDatePicker.props("size")).toEqual("large");
-    console.log(elDatePicker.props());
     expect(
       elDatePicker.props("pickerOptions").firstDayOfWeek === 1
     ).toBeTruthy();
