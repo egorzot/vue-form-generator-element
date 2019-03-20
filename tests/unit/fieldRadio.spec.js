@@ -16,7 +16,7 @@ describe("fieldRadio", () => {
       propsData: {
         schema: {
           elementLabel: "Radio example",
-          radioName: "radio_name", //add name for colorPicker div
+          inputName: "radio_name", //add name for colorPicker div
           visible: true,
           disabled: false,
           values: [{ name: "1", value: 1 }, { name: "2", value: 2 }],
@@ -39,29 +39,6 @@ describe("fieldRadio", () => {
         '<label class="el-form-item__label">Radio example</label>'
       )
     ).toBeTruthy();
-
-    // expect(elRadio.props("id")).toEqual("color_picker_id");
-    // expect(elRadio.props("size")).toEqual("medium");
-    // expect(elRadio.props("showAlpha")).toBeFalsy();
-    // expect(elRadio.props("colorFormat")).toEqual("hex");
-    // expect(elRadio.props("popperClass")).toEqual("test");
-    // expect(elRadio.props("predefine")).toEqual([
-    //   "#ff4500",
-    //   "#ff8c00",
-    //   "#ffd700",
-    //   "#90ee90",
-    //   "#00ced1",
-    //   "#1e90ff",
-    //   "#c71585"
-    // ]);
-    //
-    // const labelHtml = wrapper.find("label").html();
-    //
-
-    //
-    // const pickerDiv = wrapper.find("#color_picker_id");
-    // expect(pickerDiv.element.getAttribute("name")).toEqual("color_picker_name");
-    // expect(pickerDiv.element.getAttribute("id")).toEqual("color_picker_id");
   });
   test("RadioButton and RadioGroup with RadioType button", () => {
     const wrapper = mount(fieldRadio, {

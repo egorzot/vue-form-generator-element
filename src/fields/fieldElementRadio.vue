@@ -8,12 +8,12 @@
     >
       <el-radio-button
         v-bind:index="index"
-        v-bind:key="item.value"
+        v-bind:key="item.label"
         v-for="(item, index) in items"
-        :label="item.value"
+        :label="item.label"
         :disabled="schema.disabled"
         :size="schema.size"
-        :name="schema.radioName"
+        :name="schema.inputName"
         :id="schema.id"
         :border="schema.border"
       >
@@ -28,12 +28,12 @@
     >
       <el-radio
         v-bind:index="index"
-        v-bind:key="item.value"
+        v-bind:key="item.label"
         v-for="(item, index) in items"
-        :label="item.value"
+        :label="item.label"
         :disabled="schema.disabled"
         :size="schema.size"
-        :name="schema.radioName"
+        :name="schema.inputName"
         :id="schema.id"
         :border="schema.border"
       >
