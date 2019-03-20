@@ -1,16 +1,55 @@
 <template>
-  <div>
-    <el-radio v-for="item in items" v-model="value" :label="item.value">
-      {{ item.name }}
-    </el-radio>
-  </div>
+  <el-form-item :label="schema.elementLabel ? schema.elementLabel : ''">
+    <el-radio-group
+      v-if="schema.radioType === 'button'"
+      v-model="value"
+      :text-color="schema.textColor"
+      :fill="schema.fill"
+    >
+      <el-radio-button
+        v-bind:index="index"
+        v-bind:key="item.value"
+        v-for="(item, index) in items"
+        :label="item.value"
+        :disabled="schema.disabled"
+        :size="schema.size"
+        :name="schema.radioName"
+        :id="schema.id"
+        :border="schema.border"
+      >
+        {{ item.name }}
+      </el-radio-button>
+    </el-radio-group>
+    <el-radio-group
+      v-else
+      v-model="value"
+      :text-color="schema.textColor"
+      :fill="schema.fill"
+    >
+      <el-radio
+        v-bind:index="index"
+        v-bind:key="item.value"
+        v-for="(item, index) in items"
+        :label="item.value"
+        :disabled="schema.disabled"
+        :size="schema.size"
+        :name="schema.radioName"
+        :id="schema.id"
+        :border="schema.border"
+      >
+        {{ item.name }}
+      </el-radio>
+    </el-radio-group>
+  </el-form-item>
 </template>
 
 <script>
 import { abstractField } from "vue-form-generator";
+import defaultValueSetter from "../mixins/defaultValueSetter";
 
 export default {
-  mixins: [abstractField],
+  name: "fieldElementRadio",
+  mixins: [abstractField, defaultValueSetter],
   computed: {
     items() {
       const values = this.schema.values;
