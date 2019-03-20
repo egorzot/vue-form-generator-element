@@ -86,6 +86,7 @@ import defaultValueSetter from "../mixins/defaultValueSetter";
 const DEBOUNCE_FORMAT_MS = 1000;
 
 export default {
+  name: "fieldElementInput",
   data: () => ({
     allowedInputTypes: [
       "text",
