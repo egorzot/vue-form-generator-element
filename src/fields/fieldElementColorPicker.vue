@@ -17,9 +17,10 @@
 
 <script>
 import { abstractField } from "vue-form-generator";
+import defaultValueSetter from "../mixins/defaultValueSetter";
 
 export default {
   name: "fieldElementColorPicker",
-  mixins: [abstractField]
+  mixins: [abstractField,defaultValueSetter]
 };
 </script>
