@@ -7,7 +7,7 @@ config.stubs.transition = false;
 const localVue = createLocalVue();
 localVue.use(ElementUI);
 //todo: протетсировать remote, сделать чтобы тествы запускались все вместе
-describe("fieldSelect", () => {
+describe("fieldElementSelect.vue", () => {
   test("Select props", () => {
     const wrapper = mount(fieldSelect, {
       localVue,
@@ -62,29 +62,4 @@ describe("fieldSelect", () => {
     ).toBeTruthy();
   });
 
-  test("Select multiple props", () => {
-    const wrapper = mount(fieldSelect, {
-      localVue,
-      parentComponent: Form,
-      provide: {
-        elForm: () => Form
-      },
-      propsData: {
-        schema: {
-          values: [{ name: "1", id: 1 }, { name: "2", id: 2 }],
-          multiple: true,
-          reserveKeyword: true,
-          collapseTags: true,
-          multipleLimit: 3,
-          default: 2
-        }
-      }
-    });
-
-    const elSelect = wrapper.find(Select);
-    expect(elSelect.props("multiple")).toBeTruthy();
-    expect(elSelect.props("reserveKeyword")).toBeTruthy();
-    expect(elSelect.props("multipleLimit")).toBe(3);
-    expect(elSelect.props("collapseTags")).toBeTruthy();
-  });
 });
