@@ -22,6 +22,7 @@ import { abstractField } from "vue-form-generator";
 import defaultValueSetter from "../mixins/defaultValueSetter";
 
 export default {
+  name: "fieldElementSwitch",
   mixins: [abstractField, defaultValueSetter],
   methods: {
     change: function(v) {
