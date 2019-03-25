@@ -1,17 +1,16 @@
 <template>
   <el-form-item :label="schema.elementLabel ? schema.elementLabel : ''">
-    <el-input
+    <el-color-picker
       v-model="value"
-      :value="value"
-      type="textarea"
-      :placeholder="schema.placeholder"
-      :disabled="schema.disabled"
       :name="schema.inputName"
       :id="schema.id"
-      :readonly="schema.readonly"
-      :autosize="schema.autosize"
-      :rows="schema.rows"
-      :alt="schema.alt"
+      :disabled="schema.disabled"
+      :format="schema.format"
+      :show-alpha="schema.showAlpha"
+      :size="schema.size"
+      :color-format="schema.colorFormat"
+      :popper-class="schema.popperClass"
+      :predefine="schema.predefine"
     />
   </el-form-item>
 </template>
@@ -21,7 +20,7 @@ import { abstractField } from "vue-form-generator";
 import defaultValueSetter from "../mixins/defaultValueSetter";
 
 export default {
-  name: "fieldElementTextArea",
-  mixins: [abstractField, defaultValueSetter]
+  name: "fieldElementColorPicker",
+  mixins: [abstractField,defaultValueSetter]
 };
 </script>

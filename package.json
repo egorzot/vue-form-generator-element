@@ -1,16 +1,63 @@
 {
   "name": "vue-form-generator-element",
   "version": "0.0.2",
-  "description": "Element (http://element.eleme.io) fields for vue-form-generator",
-  "main": "src/Component.vue",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Element (https://element.eleme.io) fields for vue-form-generator",
   "author": "Egor Zotov",
-  "license": "MIT",
-  "files": [
-    "src"
-  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "vue-cli-service lint",
+    "lint-fix": "eslint --ext .js,.vue src test --fix",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "element-ui": "^2.6.3",
+    "fecha": "^3.0.2",
+    "lodash": "^4.17.11",
+    "vue-form-generator": "2.2.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-plugin-unit-jest": "^3.4.0",
+    "@vue/cli-service": "^3.3.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "@vue/test-utils": "^1.0.0-beta.28",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "jest": "^23.6.0",
+    "vue": "^2.5.21",
+    "vue-template-compiler": "^2.5.21",
+    "vue-test-utils": "^1.0.0-beta.11"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+      "^.+\\.vue$": "vue-jest",
+      ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "testMatch": [
+      "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
+    ],
+    "testURL": "http://localhost/"
+  },
   "keywords": [
     "vue",
     "vuejs",
@@ -18,11 +65,13 @@
     "generator",
     "schema",
     "json",
-    "Element"
+    "Element",
+    "Element UI",
+    "field",
+    "fields"
   ],
-  "dependencies": {
-    "vue-form-generator": "2.2.1"
-  },
+  "license": "MIT",
+  "main": "src/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/egorzot/vue-form-generator-element.git"
