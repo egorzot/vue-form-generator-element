@@ -36,18 +36,6 @@ describe("fieldElementInput", () => {
     expect(elInput.props("clearable")).toBeTruthy();
     expect(elInput.props("type")).toEqual("number");
 
-    const inputHtml = wrapper.find("input").html();
-
-    expect(
-      inputHtml.includes('placeholder="Input number example"')
-    ).toBeTruthy();
-    expect(inputHtml.includes('name="custom_element_name"')).toBeTruthy();
-    expect(inputHtml.includes('id="custom_element_id"')).toBeTruthy();
-    expect(inputHtml.includes('required="required"')).toBeTruthy();
-    expect(inputHtml.includes('disabled="disabled"')).toBeTruthy();
-    expect(inputHtml.includes('alt="Input alt"')).toBeTruthy();
-    expect(inputHtml.includes('readonly="readonly"')).toBeTruthy();
-
     const labelHtml = wrapper.find("label").html();
 
     expect(
@@ -55,6 +43,17 @@ describe("fieldElementInput", () => {
         '<label class="el-form-item__label">Input label example</label>'
       )
     ).toBeTruthy();
+
+    const input = wrapper.find("input");
+    expect(input.element.getAttribute("name")).toEqual("custom_element_name");
+    expect(input.element.getAttribute("id")).toEqual("custom_element_id");
+    expect(input.element.getAttribute("required")).toEqual("required");
+    expect(input.element.getAttribute("disabled")).toEqual("disabled");
+    expect(input.element.getAttribute("alt")).toEqual("Input alt");
+    expect(input.element.getAttribute("readonly")).toEqual("readonly");
+    expect(input.element.getAttribute("placeholder")).toEqual(
+      "Input number example"
+    );
   });
   test("Text type.", () => {
     const wrapper = mount(fieldInput, {
