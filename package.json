@@ -1,6 +1,6 @@
 {
   "name": "vue-form-generator-element",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Element (https://element.eleme.io) fields for vue-form-generator",
   "author": "Egor Zotov",
   "scripts": {
