@@ -10,7 +10,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "element-ui": "^2.4.11",
+    "element-ui": "^2.6.3",
     "fecha": "^3.0.2",
     "lodash": "^4.17.11",
     "vue-form-generator": "2.2.1"
