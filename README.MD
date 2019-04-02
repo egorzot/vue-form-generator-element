@@ -1,9 +1,9 @@
-###About
+### About
 Fields for [vue-form-generator](https://github.com/vue-generators/vue-form-generator) module with [Element css framework](http://element.eleme.io).
 
 How to use:
 
-###Usage
+### Usage
 
 ```$xslt
 yarn add vue-form-generator-element
@@ -31,6 +31,11 @@ Fields list:
 * [fieldElementSlider](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementSlider.vue)
 
 ![Screenshot](https://egor.work/blog/pictures/screen.png)
+
+### Contributing
+PR's are welcome!
+
+### Tests
 
 Run tests:
 ```
