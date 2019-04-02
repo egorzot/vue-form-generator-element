@@ -19,16 +19,16 @@ See usage [example](https://github.com/egorzot/vue-form-generator-element-exampl
 
 Fields list:
 
-* fieldElementInput
-* fieldElementSelect
-* fieldElementRadio
-* fieldElementCheckbox
-* fieldElementDatePicker
-* fieldElementSwitch
-* fieldElementTextArea
-* fieldElementUpload
-* fieldElementColorPicker
-* fieldElementColorPickerfieldElementColorPicker
+* [fieldElementInput](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementInput.vue)
+* [fieldElementSelect](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementSelect.vue)
+* [fieldElementRadio](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementRadio.vue)
+* [fieldElementCheckbox](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementCheckbox.vue)
+* [fieldElementDatePicker](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementDatePicker.vue)
+* [fieldElementSwitch](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementSwitch.vue)
+* [fieldElementTextArea](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementTextArea.vue)
+* [fieldElementUpload](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementUpload.vue)
+* [fieldElementColorPicker](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementColorPicker.vue)
+* [fieldElementSlider](https://github.com/egorzot/vue-form-generator-element/blob/master/src/fields/fieldElementSlider.vue)
 
 ![Screenshot](https://egor.work/blog/pictures/screen.png)
 
