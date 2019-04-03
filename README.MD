@@ -1,8 +1,6 @@
 ### About
 Fields for [vue-form-generator](https://github.com/vue-generators/vue-form-generator) module with [Element css framework](http://element.eleme.io).
 
-How to use:
-
 ### Usage
 
 ```$xslt
@@ -36,8 +34,6 @@ Fields list:
 PR's are welcome!
 
 ### Tests
-
-Run tests:
 ```
 yarn test
 ```
