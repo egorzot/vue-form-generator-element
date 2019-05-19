@@ -61,5 +61,4 @@ describe("fieldElementSelect.vue", () => {
       )
     ).toBeTruthy();
   });
-
 });

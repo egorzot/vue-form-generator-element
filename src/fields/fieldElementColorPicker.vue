@@ -21,6 +21,6 @@ import defaultValueSetter from "../mixins/defaultValueSetter";
 
 export default {
   name: "fieldElementColorPicker",
-  mixins: [abstractField,defaultValueSetter]
+  mixins: [abstractField, defaultValueSetter]
 };
 </script>

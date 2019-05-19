@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "vue-cli-service lint",
-    "lint-fix": "eslint --ext .js,.vue src test --fix",
+    "lint-fix": "eslint --ext .js,.vue src tests --fix",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {

@@ -62,4 +62,39 @@ describe("fieldElementDatePicker", () => {
       )
     ).toBeTruthy();
   });
+
+  test("Date range.", () => {
+    const wrapper = mount(fieldDatePicker, {
+      localVue,
+      parentComponent: Form,
+      provide: {
+        elForm: () => Form
+      },
+      propsData: {
+        schema: {
+          startPlaceholder: "Start placeholder",
+          endPlaceholder: "End placeholder",
+          defaultTime: "['00:00:00', '23:59:59']",
+          unlinkPanels: true,
+          dateType: "daterange",
+          default: ["December 17, 1995 03:24:00", "December 19, 1995 03:24:00"],
+          defaultValue: ["1999-02-12T12:46:00", "2019-05-19T16:43:00"]
+        }
+      }
+    });
+
+    const elDatePicker = wrapper.find(DatePicker);
+
+    expect(elDatePicker.props("startPlaceholder")).toEqual("Start placeholder");
+    expect(elDatePicker.props("endPlaceholder")).toEqual("End placeholder");
+    expect(elDatePicker.props("defaultTime")).toEqual(
+      "['00:00:00', '23:59:59']"
+    );
+    expect(elDatePicker.props("unlinkPanels")).toBeTruthy();
+    expect(elDatePicker.props("type")).toEqual("daterange");
+    expect(elDatePicker.props("defaultValue")).toEqual([
+      "1999-02-12T12:46:00",
+      "2019-05-19T16:43:00"
+    ]);
+  });
 });

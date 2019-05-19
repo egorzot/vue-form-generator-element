@@ -22,7 +22,7 @@ describe("fieldRadio", () => {
           values: [{ name: "1", value: 1 }, { name: "2", value: 2 }],
           size: "medium", //size of the Radio, only works when border is true
           default: 2,
-          border: true, // only if radioType not button
+          border: true // only if radioType not button
         }
       }
     });

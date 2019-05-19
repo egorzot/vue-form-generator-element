@@ -17,6 +17,11 @@
       :picker-options="{
         firstDayOfWeek: schema.firstDayOfWeek ? schema.firstDayOfWeek : 7
       }"
+      :range-separator="schema.rangeSeparator"
+      :start-placeholder="schema.startPlaceholder"
+      :end-placeholder="schema.endPlaceholder"
+      :default-time="schema.defaultTime"
+      :unlink-panels="!!schema.unlinkPanels"
     />
   </el-form-item>
 </template>
@@ -29,7 +34,13 @@ export default {
   name: "fieldElementDatePicker",
   mixins: [abstractField, defaultValueSetter],
   data: () => ({
-    allowedTypes: ["date", "datetime"]
+    allowedTypes: [
+      "date",
+      "datetime",
+      "daterange",
+      "datetimerange",
+      "monthrange"
+    ]
   }),
   methods: {
     getType() {
