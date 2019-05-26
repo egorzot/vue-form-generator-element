@@ -6,7 +6,6 @@ import fieldSelect from "@/fields/fieldElementSelect.vue";
 config.stubs.transition = false;
 const localVue = createLocalVue();
 localVue.use(ElementUI);
-//todo: протетсировать remote, сделать чтобы тествы запускались все вместе
 describe("fieldElementSelect.vue", () => {
   test("Select props", () => {
     const wrapper = mount(fieldSelect, {

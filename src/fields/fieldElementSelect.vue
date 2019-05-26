@@ -38,7 +38,7 @@
 </template>
 
 <script>
-//todo: сделать группировку, протестировать (смотри group)
+//todo: add grouping
 import { isObject, isNil, find } from "lodash";
 import { abstractField } from "vue-form-generator";
 export default {
