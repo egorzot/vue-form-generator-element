@@ -111,9 +111,8 @@ export default {
         }
         switch (this.schema.inputType.toLowerCase()) {
           case "number":
-            // debounce
             return (newValue, oldValue) => {
-              this.debouncedFormatFunc(value, oldValue);
+              this.formatNumberToModel(value, oldValue);
             };
           default:
             break;
@@ -123,8 +122,11 @@ export default {
       return value;
     },
     formatNumberToModel(newValue, oldValue) {
-      if (!isNumber(newValue)) {
-        newValue = NaN;
+      const lastKey = newValue.toString().slice(-1);
+      if (!lastKey && isNaN(Number(lastKey))) {
+        newValue = oldValue;
+      } else if (!isNumber(newValue)) {
+        newValue = parseFloat(newValue) ? parseFloat(newValue) : oldValue;
       }
       this.updateModelValue(newValue, oldValue);
     },
